@@ -8,7 +8,7 @@ function addProduct(event) {
   product.innerHTML = `
    <label>Precio del Producto ${acumulador}</label>
    <input type="number">
-   <select >
+   <select class="options">
      <option value="" class="value" selected hidden>Etiqueta del producto</option>
      <option value="value-1">Etiqueta Roja</option>
      <option value="value-2">Etiqueta Azul</option>
@@ -24,3 +24,7 @@ function removeProduct (event) {
   acumulador -= 1;
   return event.target.parentElement.remove();
 }
+
+let total = 0;
+
+

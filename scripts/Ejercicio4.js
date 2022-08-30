@@ -3,7 +3,7 @@ const groupsContainer = document.querySelector('.groups')
 
 
 function addStudents () {
-  acumulador = acumulador + 1;
+  acumulador += 1;
   let student = document.createElement('section') 
   student.className = 'newStudent'
   student.innerHTML = `
@@ -15,7 +15,7 @@ function addStudents () {
 }
 
 function removeStudent (event) {
-acumulador = acumulador - 1;
+acumulador -= 1;
 return event.target.parentElement.remove();
 }
 

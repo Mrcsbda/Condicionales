@@ -65,6 +65,19 @@ input {
   justify-content: center;
 }
 
+.result2 {
+  width: 530px;
+  border: 1px solid black;
+  height: 30px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin: 10px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 select {
   padding: 15px;
   font-size: 18px;
