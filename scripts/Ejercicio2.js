@@ -1,40 +1,45 @@
+let resultadoFibonacci = document.querySelector(".fibonacci");
+let resultadoPrimo = document.querySelector(".primo");
 
-const numero = parseInt(prompt("Ingrese un número positivo: "));
-let esPrimo = true;
+function evaluarFibonacci() {
+  let numero = document.querySelector("#numero").value;
+  let varAux = [0, 1];
+  let verificar = false;
 
-if (numero === 1) {
-  console.log(
-    "El 1 no es un número primo pero si es un Número de Fibonacci. <br>"
-  );
-} else if (numero > 1) {
-  for (let i = 2; i < numero; i++) {
-    if (numero % i == 0) {
-      esPrimo = false;
-      break;
+  console.log(numero);
+
+  for (let i = 2; i < +numero + 2; i++) {
+    varAux[i] = varAux[i - 1] + varAux[i - 2];
+  }
+
+  console.log(varAux);
+
+  for (let i = 0; i <= varAux.length; i++) {
+    if (varAux[i] === +numero) {
+      verificar = true;
     }
   }
 
-  if (esPrimo) {
-    console.log(`${numero} es un número primo. <br>`);
+  if (verificar === true) {
+    resultadoFibonacci.innerHTML = "Es un número fibonacci";
   } else {
-    console.log(`${numero} no es un número primo. <br>`);
+    resultadoFibonacci.innerHTML = "No es un número fibonacci";
   }
-
-  esFibonacci(numero)
-    ? console.log(numero + " es un Número de Fibonacci <br/>")
-    : console.log(numero + " no es un Número de Fibonacci <br/>");
-} else {
-  console.log(
-    "El número ingresado no es un número primo ni tampoco un Número de Fibonacci. <br>"
-  );
 }
 
-function esCuadradoPerfecto(x) {
-  let s = parseInt(Math.sqrt(x));
-  return s * s == x;
-}
+function evaluarPrimo() {
+  let numero = document.querySelector("#numero").value;
+  let verificar = true; 
 
-// Devuelve true si n es un número de Fibonacci, sino es false
-function esFibonacci(n) {
-  return esCuadradoPerfecto(5 * n * n + 4) || esCuadradoPerfecto(5 * n * n - 4);
+  for (let i =  2; i < numero; i++) {
+    if (numero % i === 0) {
+    verificar = false;
+    }
+  }
+  
+  if (verificar === true) {
+    resultadoPrimo.innerHTML = "Es un número primo";
+  } else {
+    resultadoPrimo.innerHTML = "No es un número primo";
+  }
 }

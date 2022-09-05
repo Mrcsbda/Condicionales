@@ -6,5 +6,5 @@ for ( let i= 100; i > 0; i = i-2) {
   resultado += i;
 }
 
-return document.querySelector(".resultado").innerHTML = resultado;
+return document.querySelector(".result").innerHTML = resultado;
 }
